@@ -1,0 +1,28 @@
+{% extends "base1.html" %}
+{% block content %}
+
+<div class="container">&emsp;
+  <div class="row">&emsp;
+      {% for i in groc1 %}
+      <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+          <div class="card" style="width: 18rem;" >
+            <img src='/static/{{i[4]}}'  width="285" height="183" alt="Generic placeholder image"> 
+              <div class="card-body" style="color: #000;">
+                <h5 class="card-title"><center>{{i[1]}}</center></h5>
+
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">details : {{i[2]}}</li>
+                <li class="list-group-item">price : {{i[3]}}</li>
+              </ul>
+              <a href="/buygrocery?id={{i[0]}}" class="btn btn-success" type="submit">Buy now</a>&emsp;
+              
+
+            </div>&emsp;
+      </div>&emsp;
+      {% endfor %}
+  </div>
+</div>
+
+
+   {% endblock %}

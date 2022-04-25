@@ -1,0 +1,29 @@
+{% extends "base1.html" %}
+{% block content %}
+
+<div class="container">&emsp;
+  <div class="row">
+      {% for i in books %}
+      <div class="col col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+          <div class="card" style="width: 18rem; height: 32rem;">
+            <img src='/static/{{i[5]}}' width="285" height="200" alt="Generic placeholder image"> 
+            <div class="card-body">
+                <h5 class="card-title"><center>{{i[1]}}</center></h5>
+                
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Author : {{i[2]}}</li>
+                <li class="list-group-item">details : {{i[3]}}</li>
+                <li class="list-group-item">price : {{i[4]}}</li>
+              </ul>
+              <a href="/buybooks?id={{i[0]}}" class="btn btn-success" type="submit">Buy now</a>&emsp;
+              
+
+            </div>&emsp;
+      </div>&emsp;
+      {% endfor %}
+  </div>
+</div>
+
+
+   {% endblock %}
